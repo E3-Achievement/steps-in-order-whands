@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Everyday Routines</title><style>
+html,body{margin:0}
+body{background:#efeaf5}
+body.adult-bg{background:#eef1f5}
+[hidden]{display:none!important}
+.sq{--ink:#1c1526;--orange:#f47b20;--purple:#6b3fa0;--soft:#fff4e6;--line:#d9cfe6;--good:#1d7a38;--goodbg:#e4f5e9;--bad:#b3261e;--badbg:#fdeceb;--tile:#ffe2c2;--tileedge:#e9a15b;--slotbg:#f6f2fb;--word:20px;--cardmin:170px;--pic:80px;
+  font-family:"Trebuchet MS","Segoe UI",Verdana,sans-serif;color:var(--ink);max-width:1060px;margin:0 auto;padding:16px 16px 48px;font-size:18px}
+.sq.size-large{--word:24px;--cardmin:200px;--pic:104px}
+.sq.size-xl{--word:30px;--cardmin:250px;--pic:136px}
+.sq.look-adult{--ink:#17202b;--orange:#2f6f9f;--purple:#23405e;--soft:#eef4fa;--line:#cfd6e0;--tile:#ffffff;--tileedge:#b9c4d1;--slotbg:#f4f6f9;font-family:"Segoe UI",Verdana,Arial,sans-serif}
+.sq *{box-sizing:border-box}
+.sq button{font:inherit;color:inherit}
+.sq button:focus-visible,.sq input:focus{outline:3px solid var(--orange);outline-offset:2px}
+.sq .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.sq .top h1{margin:0;font-size:32px;color:var(--purple);line-height:1.1;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sq .top h1 .he{margin-right:0}
+.sq .he{font-size:40px;margin-right:10px;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.sq .who{font-weight:700;font-size:20px;border-bottom:3px solid var(--ink);padding:0 6px 2px}
+.sq .panel{background:#fff;border:3px dashed var(--purple);border-radius:16px;padding:16px 18px}
+.sq.look-adult .panel{border:2px solid var(--line);border-radius:10px}
+.sq .lead{font-size:24px;font-weight:700;margin:0 0 12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sq .howto{display:grid;gap:10px;margin:0 0 14px;font-size:20px}
+.sq .howto div{display:flex;align-items:center;gap:10px}
+.sq .badge{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--orange);color:#fff;font-weight:700;font-size:19px;display:inline-flex;align-items:center;justify-content:center}
+.sq .lbl{display:block;font-weight:700;margin:6px 0 4px}
+.sq .namein{font:inherit;font-size:24px;width:100%;max-width:420px;padding:10px 14px;border:3px solid var(--line);border-radius:12px;display:block;margin-bottom:16px}
+.sq .note{color:#5b4d70;font-size:17px}
+.sq.look-adult .note{color:#4a5563}
+.sq .say{font-size:22px;border:2px solid var(--purple);background:#fff;border-radius:12px;padding:2px 10px;cursor:pointer;line-height:1.3;flex:0 0 auto}
+.sq .howto .say{font-size:18px;padding:1px 8px}
+.sq .sayrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sq .sayrow .lbl{margin:6px 0 4px}
+.sq .zl h3{display:flex;align-items:center;gap:10px}
+.sq .zl h3 .say{font-size:18px;padding:1px 8px}
+.sq .cwrap{position:relative;width:100%;display:flex}
+.sq .csay{position:absolute;top:6px;right:6px;z-index:1;font-size:18px;line-height:1;width:40px;height:40px;border-radius:50%;border:2px solid var(--purple);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.sq .slot .csay{top:auto;bottom:8px}
+.sq .card{padding-right:14px}
+.sq .slot .emptytxt{background:none;border:0;cursor:pointer;width:100%;height:100%;font-size:18px}
+.sq .ctl .ctlsay{align-self:center}
+.sq .chips .say{font-size:18px;padding:1px 8px}
+.sq .rhead{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sq .rhead h2{margin:0;font-size:24px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sq .rhead h2.ptitle{font-size:30px;color:var(--purple)}
+.sq .pemo{font-size:38px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.sq .instr{font-size:21px;font-weight:700;margin:10px 0 0}
+.sq .pagelist ol{margin:0 0 14px;font-size:19px;padding-left:28px}
+.sq .pagelist li{margin:3px 0}
+.sq .rbadge{background:var(--orange);color:#fff;font-weight:700;border-radius:999px;padding:4px 14px;font-size:17px}
+.sq .zl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin:18px 0 10px}
+.sq .zl h3{margin:0;font-size:20px;color:var(--purple)}
+.sq .cnt{color:#5b4d70;font-size:16px;font-variant-numeric:tabular-nums}
+.sq .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--cardmin),1fr));gap:14px 12px}
+.sq .slot{position:relative;min-height:calc(var(--pic) + 90px);border-radius:14px;background:var(--slotbg);border:3px dashed var(--line);display:flex}
+.sq .slot.empty{align-items:center;justify-content:center}
+.sq .slot .emptytxt{color:#a597b8;font-weight:700}
+.sq.look-adult .slot .emptytxt{color:#8b96a5}
+.sq .slot .pos{position:absolute;top:-11px;left:-8px;width:34px;height:34px;border-radius:50%;background:var(--purple);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;z-index:2;font-size:18px}
+.sq .slot.given{border-style:solid;opacity:.8}
+.sq .slot.ok{border:3px solid var(--good);background:var(--goodbg)}
+.sq .slot.no{border:3px solid var(--bad);background:var(--badbg)}
+.sq .slot .mark{position:absolute;top:-11px;right:-8px;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;z-index:2;color:#fff}
+.sq .slot.ok .mark{background:var(--good)}
+.sq .slot.no .mark{background:var(--bad)}
+.sq .card{width:100%;min-height:calc(var(--pic) + 84px);border:0;border-radius:14px;background:var(--tile);box-shadow:inset 0 -6px 0 var(--tileedge);cursor:pointer;padding:14px 10px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;transition:transform .12s;-webkit-tap-highlight-color:transparent}
+.sq.look-adult .card{border:2px solid var(--tileedge);box-shadow:0 2px 0 var(--tileedge);border-radius:10px}
+.sq .card:hover{transform:translateY(-2px)}
+.sq .card.locked,.sq .slot.done .card{cursor:default}
+.sq .card.locked:hover{transform:none}
+.sq .card .pic{width:var(--pic);height:var(--pic);object-fit:cover;border-radius:10px;background:#fff}
+.sq .card .emo{font-size:calc(var(--pic) * .62);line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.sq .card .w{font-size:var(--word);font-weight:800;line-height:1.15;text-align:center;overflow-wrap:anywhere}
+.sq.look-adult .card .w{font-weight:700}
+.sq .card.glow{animation:sqglow 1s ease-in-out 4;box-shadow:inset 0 -6px 0 var(--tileedge),0 0 0 5px var(--purple)}
+@keyframes sqglow{50%{box-shadow:inset 0 -6px 0 var(--tileedge),0 0 0 10px #c9a8ee}}
+.sq.look-adult .card.glow{animation:none;box-shadow:0 0 0 5px var(--orange)}
+@media (prefers-reduced-motion:reduce){.sq .card{transition:none}.sq .card.glow{animation:none}}
+.sq .fb{margin-top:18px;padding:12px 16px;border-radius:14px;font-weight:700;font-size:20px;display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+.sq .fb .fbtxt{flex:1}
+.sq .fb.good{background:var(--goodbg);border:3px solid var(--good);color:var(--good)}
+.sq .fb.bad{background:var(--badbg);border:3px solid var(--bad);color:var(--bad)}
+.sq .fb.info{background:var(--soft);border:3px solid #f2c48d}
+.sq.look-adult .fb.info{border-color:#9fb8d1}
+.sq .fb .why{display:block;color:var(--ink);font-weight:400;margin-top:6px}
+.sq .fb .q{color:var(--ink);font-weight:800}
+.sq .ctl{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.sq .bigbtn{font-weight:800;font-size:22px;border:0;border-radius:14px;padding:14px 26px;background:var(--orange);color:#fff !important;box-shadow:0 4px 0 #b95a10;cursor:pointer}
+.sq.look-adult .bigbtn{box-shadow:none;border-radius:10px;font-weight:700}
+.sq .tbtn{font-weight:700;font-size:19px;border:3px solid var(--purple);background:#fff;color:var(--purple) !important;border-radius:14px;padding:11px 18px;cursor:pointer}
+.sq.look-adult .tbtn{border-width:2px;border-radius:10px}
+.sq .result{text-align:center}
+.sq .stars{font-size:54px}
+.sq .result h2{font-size:30px;color:var(--purple);margin:6px 0 12px;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap}
+.sq .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:12px}
+.sq .chip{padding:6px 12px;border-radius:999px;font-weight:700;font-size:17px}
+.sq .chip.ok{background:var(--goodbg);color:var(--good)}
+.sq .chip.try{background:var(--soft);color:#9a4b0c}
+.sq.look-adult .chip.try{color:var(--purple)}
+.sq .sent{font-weight:700;color:var(--good);font-size:20px}
+.sq .emailrow{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;margin:10px 0 14px}
+.sq .emailin{font:inherit;padding:8px 12px;border:2px solid var(--line);border-radius:10px;min-width:0;width:280px;max-width:100%}
+.sq .rbtns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+@media (max-width:560px){.sq{--cardmin:140px}.sq.size-large{--cardmin:150px}.sq.size-xl{--cardmin:100%}.sq .top h1{font-size:26px}.sq .lead{font-size:20px}}
+</style></head><body><div id="root"></div><script>
+const CONFIG={"title":"Everyday Routines","emoji":"📋","activityId":"muo4wdxqovsuwk","email":"burdettechris63@gmail.com","subject":"Steps in order results","pages":[{"title":"Wash Your Hands","emoji":"🧼","items":[{"w":"Turn on the water","e":"🚰","img":""},{"w":"Wet your hands","e":"💧","img":""},{"w":"Put on soap","e":"🧼","img":""},{"w":"Scrub for 20 seconds","e":"👐","img":""},{"w":"Rinse off the soap","e":"🚿","img":""},{"w":"Dry with a paper towel","e":"🧻","img":""},{"w":"Throw the towel away","e":"🗑️","img":""}]},{"title":"Get Ready for Work","emoji":"👔","items":[{"w":"Wake up to the alarm","e":"⏰","img":""},{"w":"Take a shower","e":"🚿","img":""},{"w":"Brush your teeth","e":"🪥","img":""},{"w":"Put on your work clothes","e":"👕","img":""},{"w":"Eat breakfast","e":"🥣","img":""},{"w":"Pack your lunch and ID","e":"🎒","img":""},{"w":"Leave for work","e":"🚌","img":""}]},{"title":"Start Your Shift","emoji":"🕘","items":[{"w":"Arrive 10 minutes early","e":"🚪","img":""},{"w":"Put away your coat and bag","e":"🧥","img":""},{"w":"Clock in","e":"🪪","img":""},{"w":"Say hello to your supervisor","e":"👋","img":""},{"w":"Check your task list","e":"📋","img":""},{"w":"Get your supplies","e":"🧤","img":""},{"w":"Start your first task","e":"✅","img":""}]},{"title":"Make a Turkey Sandwich","emoji":"🥪","items":[{"w":"Wash your hands","e":"🧼","img":""},{"w":"Lay out two slices of bread","e":"🍞","img":""},{"w":"Spread mayo on the bread","e":"🧈","img":""},{"w":"Add the turkey","e":"🦃","img":""},{"w":"Add the cheese","e":"🧀","img":""},{"w":"Put the top slice on","e":"🥪","img":""},{"w":"Cut it in half","e":"🔪","img":""},{"w":"Clean up your space","e":"🧽","img":""}]},{"title":"Do a Load of Laundry","emoji":"🧺","items":[{"w":"Sort lights and darks","e":"🧺","img":""},{"w":"Check the pockets","e":"👖","img":""},{"w":"Put clothes in the washer","e":"🌀","img":""},{"w":"Add detergent","e":"🧴","img":""},{"w":"Start the washer","e":"▶️","img":""},{"w":"Move clothes to the dryer","e":"🔄","img":""},{"w":"Fold the clean clothes","e":"👕","img":""}]},{"title":"How to Call In Sick","emoji":"📞","items":[{"w":"Notice you are too sick to work","e":"🤒","img":""},{"w":"Call before your shift starts","e":"📞","img":""},{"w":"Say your name","e":"👋","img":""},{"w":"Say you are sick and cannot come in","e":"🗣️","img":""},{"w":"Ask if they need anything else","e":"❓","img":""},{"w":"Say thank you","e":"🙏","img":""},{"w":"Rest and get better","e":"🛌","img":""}]}],"rounds":"2","given":"0","size":"large","look":"friendly","readAloud":"tap","pictures":true,"words":true,"hints":false,"showAnswer":false,"showScore":true};
+(function seqRuntime(){
+  'use strict';
+  function add(el, k){
+    if (k == null || k === false) return;
+    if (Array.isArray(k)) { k.forEach(x => add(el, x)); return; }
+    el.appendChild(typeof k === 'object' ? k : document.createTextNode(String(k)));
+  }
+  function h(tag, props){
+    const el = document.createElement(tag);
+    if (props) for (const k in props) {
+      const v = props[k];
+      if (v == null || v === false) continue;
+      if (k === 'class') el.className = v;
+      else if (k === 'value') el.value = v;
+      else if (k.slice(0, 2) === 'on' && typeof v === 'function') el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? '' : v);
+    }
+    for (let i = 2; i < arguments.length; i++) add(el, arguments[i]);
+    return el;
+  }
+  const EMOJI_RE = /[\p{Extended_Pictographic}\u200d\ufe0f]/gu;
+  const norm = t => String(t).trim().toLowerCase().replace(/\s+/g, ' ');
+  const same = (a, b) => !!a && !!b && norm(a.w) === norm(b.w);
+  const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  function shuffle(a){ const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = b[i]; b[i] = b[j]; b[j] = t; } return b; }
+  function speak(t){
+    try {
+      const s = String(t || '').replace(EMOJI_RE, '').replace(/\s+/g, ' ').trim();
+      if (!s || !window.speechSynthesis) return;
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(s);
+      u.rate = 0.85; window.speechSynthesis.speak(u);
+    } catch(e) {}
+  }
+  function picEl(it){
+    if (it.img) return h('img', {class:'pic', src:it.img, alt:''});
+    if (it.e) return h('span', {class:'emo', 'aria-hidden':'true'}, it.e);
+    return null;
+  }
+  const encode = o => 'SEQ1:' + btoa(unescape(encodeURIComponent(JSON.stringify(o))));
+  function dl(name, blob){
+    const a = h('a', {href:URL.createObjectURL(blob), download:name}); document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 800);
+  }
+  const fmtTime = s => { const m = Math.floor(s / 60), r = s % 60; return m ? m + ' min ' + r + ' sec' : r + ' sec'; };
+
+  function pagesOf(cfg){
+    const raw = Array.isArray(cfg.pages) ? cfg.pages : [{title:cfg.title, emoji:'', items:cfg.items || []}];
+    return raw.map(p => ({title:p.title || '', emoji:p.emoji || '', items:(p.items || []).filter(i => i.w && i.w.trim())})).filter(p => p.items.length >= 3);
+  }
+  function makeRounds(cfg){
+    const pages = pagesOf(cfg);
+    const count = Math.max(1, parseInt(cfg.rounds, 10) || 1);
+    const out = [];
+    pages.forEach((pg, pi) => {
+      const items = pg.items, n = items.length;
+      const g = Math.max(0, Math.min(parseInt(cfg.given, 10) || 0, n - 2));
+      for (let r = 0; r < count; r++) {
+        const rest = items.slice(g);
+        let pool = shuffle(rest), tries = 0;
+        while (rest.length > 2 && tries++ < 10 && pool.every((it, k) => same(it, rest[k]))) pool = shuffle(rest);
+        const slots = Array(n).fill(null); for (let k = 0; k < g; k++) slots[k] = items[k];
+        const label = (pages.length > 1 ? 'Page ' + (pi + 1) + ' of ' + pages.length : 'Practice ' + (r + 1) + ' of ' + count) + (pages.length > 1 && count > 1 ? ', practice ' + (r + 1) : '');
+        out.push({pi, page:pages.length > 1 || (pg.title && pg.title !== cfg.title) ? pg.title : '', emoji:pg.emoji, label, showLabel:pages.length > 1 || count > 1,
+          correct:items, given:g, pool, slots, checks:0, hints:0, shown:false, solved:false, first:null, got:0, marks:null, fb:null, glow:null, say:false, intro:false});
+      }
+    });
+    return out;
+  }
+
+  function mount(root, cfg){
+    const F = cfg.look !== 'adult';
+    root.className = 'sq size-' + (cfg.size || 'large') + (F ? '' : ' look-adult');
+    const RA = cfg.readAloud === true ? 'tap' : (cfg.readAloud || 'off');
+    const canSpeak = RA !== 'off' && !!window.speechSynthesis;
+    const auto = canSpeak && RA === 'auto';
+    let name = '', started = 0, rounds = [], ri = 0;
+    let embedded = false; try { embedded = window.parent && window.parent !== window; } catch(e) { embedded = true; }
+    const pageList = pagesOf(cfg);
+    const sayBtn = text => canSpeak ? h('button', {type:'button', class:'say', title:'Read aloud', 'aria-label':'Read aloud', onclick:() => speak(text)}, '🔊') : null;
+    const top = () => h('header', {class:'top'}, h('h1', null, cfg.emoji ? h('span', {class:'he', 'aria-hidden':'true'}, cfg.emoji) : null, cfg.title || 'Steps in Order', sayBtn(cfg.title || 'Steps in Order')), name ? h('span', {class:'who'}, (F ? '✏️ ' : '') + name) : null);
+
+    function startScreen(){
+      root.textContent = '';
+      const lead = 'Put the steps in order, from first to last.';
+      const how = ['Tap a card to put it in the next spot.', 'Tap a card in a spot to take it back.', 'Tap Check when all the steps are placed.'];
+      const nRounds = Math.max(1, parseInt(cfg.rounds, 10) || 1);
+      const nm = h('input', {type:'text', class:'namein', id:'sq-name', placeholder:'Type your name', autocomplete:'off', value:name});
+      const go = h('button', {type:'button', class:'bigbtn', onclick:() => { name = nm.value.trim(); started = Date.now(); rounds = makeRounds(cfg); ri = 0; play(); }}, F ? '▶️ Start' : 'Start');
+      nm.addEventListener('keydown', e => { if (e.key === 'Enter') go.click(); });
+      root.appendChild(top());
+      if (!pageList.length) { root.appendChild(h('section', {class:'panel'}, h('p', {class:'lead'}, 'This activity needs at least 3 steps. Ask staff to add more.'))); return; }
+      root.appendChild(h('section', {class:'panel start'},
+        h('p', {class:'lead'}, lead, sayBtn(lead + ' ' + how.join(' '))),
+        h('div', {class:'howto'}, how.map((t, i) => h('div', null, h('span', {class:'badge'}, String(i + 1)), i === 2 ? 'Tap ✅ Check when all the steps are placed.' : t, sayBtn(t)))),
+        pageList.length > 1 ? h('div', {class:'pagelist'}, h('p', {class:'note sayrow'}, 'This worksheet has ' + pageList.length + ' pages:',
+            sayBtn('This worksheet has ' + pageList.length + ' pages. ' + pageList.map((p, i) => (i + 1) + '. ' + (p.title || 'Routine')).join('. '))),
+          h('ol', null, pageList.map(p => h('li', null, (p.emoji ? p.emoji + ' ' : '') + (p.title || 'Routine'))))) : null,
+        nRounds > 1 ? h('p', {class:'note sayrow'}, 'You will practice ' + (pageList.length > 1 ? 'each page ' : '') + nRounds + ' times.', sayBtn('You will practice ' + (pageList.length > 1 ? 'each page ' : '') + nRounds + ' times.')) : null,
+        h('div', {class:'sayrow'}, h('label', {for:'sq-name', class:'lbl'}, 'Your name'), sayBtn('Type your name in the box. Then tap Start.')), nm, go));
+      if (!embedded) setTimeout(() => { try { nm.focus(); } catch(e) {} }, 50);
+    }
+
+    function card(r, it, where, idx){
+      const pic = cfg.pictures !== false ? picEl(it) : null;
+      const showWord = cfg.words !== false || !pic;
+      const locked = where === 'slot' && idx < r.given;
+      const btn = h('button', {type:'button', class:'card' + (r.glow === it ? ' glow' : '') + (locked ? ' locked' : ''), 'aria-label':it.w, onclick:() => {
+        if (r.solved || r.shown || locked) { if (canSpeak) speak(it.w); return; }
+        if (where === 'pool') {
+          const k = r.slots.indexOf(null); if (k < 0) return;
+          r.slots[k] = it; r.pool = r.pool.filter(x => x !== it);
+        } else {
+          r.slots[idx] = null;
+          const head = r.slots.slice(0, r.given), rest = r.slots.slice(r.given).filter(Boolean);
+          r.slots = head.concat(rest, Array(r.slots.length - r.given - rest.length).fill(null));
+          r.pool.push(it);
+        }
+        if (canSpeak) speak(it.w);
+        r.marks = null; r.fb = null; r.glow = null; play();
+      }}, pic, showWord ? h('span', {class:'w'}, it.w) : null);
+      // Separate speaker so a student can hear a card without moving it.
+      return h('div', {class:'cwrap'}, btn, canSpeak ? h('button', {type:'button', class:'csay', title:'Hear this card', 'aria-label':'Hear: ' + it.w, onclick:e => { e.stopPropagation(); speak(it.w); }}, '🔊') : null);
+    }
+    // A section heading with its own speaker button.
+    const secHead = (label, cnt, say) => h('div', {class:'zl'}, h('h3', null, label, sayBtn(say)), cnt ? h('span', {class:'cnt'}, cnt) : null);
+    const listText = arr => arr.map((it, k) => (k + 1) + '. ' + (it ? it.w : 'empty')).join('. ');
+
+    const quote = t => h('b', {class:'q'}, '“' + t + '”');
+
+    function check(r){
+      r.say = true;
+      if (r.slots.indexOf(null) >= 0) { r.fb = {kind:'info', body:['Place all the steps first, then tap ✅ Check.']}; return; }
+      r.checks++;
+      r.marks = r.slots.map((it, k) => same(it, r.correct[k]));
+      const toPlace = r.slots.length - r.given;
+      const got = r.marks.slice(r.given).filter(Boolean).length;
+      if (r.first == null) { r.first = r.slots.slice(r.given).map(i => i.w); r.got = got; }
+      if (got === toPlace) {
+        r.solved = true;
+        const firstTry = r.checks === 1 && !r.hints;
+        r.fb = {kind:'good', body:[F ? (firstTry ? '🎉 All in order on the first try!' : '🎉 All in order. Great work!') : (firstTry ? 'Correct on the first try. All steps are in order.' : 'Correct. All steps are in order.')]};
+      } else {
+        const k = r.marks.indexOf(false);
+        r.fb = {kind:'bad', body:[got + ' of ' + toPlace + ' steps are in the right spot. Look at step ' + (k + 1) + '.',
+          h('span', {class:'why'}, k === 0 ? 'Which step do you do first?' : ['What do you do right after ', quote(r.correct[k - 1].w), '?'])]};
+      }
+    }
+    function hint(r){
+      r.hints++; r.marks = null; r.say = true;
+      let k = -1;
+      for (let i = r.given; i < r.slots.length; i++) { if (!r.slots[i] || !same(r.slots[i], r.correct[i])) { k = i; break; } }
+      if (k < 0) { r.fb = {kind:'good', body:['Everything so far is right. Tap ✅ Check!']}; return; }
+      const need = r.correct[k];
+      const inPool = r.pool.find(x => same(x, need));
+      r.glow = inPool || r.slots.find((x, i) => x && i > k && same(x, need)) || null;
+      const lead = k === 0 ? 'Step 1 is the very first thing you do. ' : ['Step ' + (k + 1) + ' comes right after ', quote(r.correct[k - 1].w), '. '];
+      const wrongHere = r.slots[k] ? ['Tap ', quote(r.slots[k].w), ' to take it back. Then '] : null;
+      const where = inPool ? (wrongHere ? 'find the glowing card below.' : 'The card is glowing below.') : (wrongHere ? 'find the glowing card in your steps.' : 'The card is glowing in your steps. Tap it to take it back first.');
+      r.fb = {kind:'info', body:['💡 ', lead, wrongHere, where]};
+    }
+    function reveal(r){
+      if (r.first == null) { r.first = []; r.got = 0; }
+      r.shown = true; r.slots = r.correct.slice(); r.pool = []; r.marks = null; r.glow = null; r.say = true;
+      r.fb = {kind:'info', body:[(F ? '👀 ' : '') + 'Here is the right order. Read the steps from 1 to ' + r.slots.length + ', then go on.']};
+    }
+    function resetRound(r){
+      r.pool = shuffle(r.correct.slice(r.given));
+      r.slots = r.correct.slice(0, r.given).concat(Array(r.correct.length - r.given).fill(null));
+      r.marks = null; r.fb = null; r.glow = null;
+    }
+
+    function play(){
+      const r = rounds[ri];
+      root.textContent = '';
+      root.appendChild(top());
+      const instr = 'Put the steps in order, from first to last.';
+      const panel = h('section', {class:'panel'});
+      if (r.page) {
+        const pt = r.page;
+        panel.appendChild(h('div', {class:'rhead'}, r.showLabel ? h('span', {class:'rbadge'}, r.label) : null,
+          h('h2', {class:'ptitle'}, r.emoji ? h('span', {class:'pemo', 'aria-hidden':'true'}, r.emoji) : null, pt, sayBtn(pt + '. ' + instr))));
+        panel.appendChild(h('p', {class:'instr'}, instr));
+      } else {
+        panel.appendChild(h('div', {class:'rhead'}, r.showLabel ? h('span', {class:'rbadge'}, r.label) : null, h('h2', null, instr, sayBtn(instr))));
+      }
+      if (r.given) { const gt = r.given === 1 ? 'Step 1 is done for you.' : 'Steps 1 to ' + r.given + ' are done for you.'; panel.appendChild(h('p', {class:'note sayrow'}, gt, sayBtn(gt))); }
+      const toPlace = r.slots.length - r.given, placed = r.slots.slice(r.given).filter(Boolean).length;
+      panel.appendChild(secHead('Your steps', placed + ' of ' + toPlace + ' placed', 'Your steps. ' + placed + ' of ' + toPlace + ' placed. ' + listText(r.slots)));
+      panel.appendChild(h('div', {class:'grid'}, r.slots.map((it, k) => {
+        const cls = 'slot' + (it ? '' : ' empty') + (k < r.given ? ' given' : '') + (r.marks && k >= r.given ? (r.marks[k] ? ' ok' : ' no') : '') + (r.shown || r.solved ? ' done' : '');
+        return h('div', {class:cls},
+          h('span', {class:'pos'}, String(k + 1)),
+          r.marks && k >= r.given ? h('span', {class:'mark', 'aria-label':r.marks[k] ? 'right' : 'not right'}, r.marks[k] ? '✓' : '✗') : null,
+          it ? card(r, it, 'slot', k) : h('button', {type:'button', class:'emptytxt', 'aria-label':'Step ' + (k + 1) + ' is empty', onclick:() => { if (canSpeak) speak('Step ' + (k + 1) + ' is empty. Tap a card below to put it here.'); }}, 'Step ' + (k + 1)));
+      })));
+      if (!r.solved && !r.shown) {
+        panel.appendChild(secHead('Cards', 'Tap a card to place it', r.pool.length ? 'Cards. Tap a card to place it. ' + r.pool.map(it => it.w).join('. ') : 'All steps are placed. Tap Check.'));
+        panel.appendChild(h('div', {class:'grid pool'}, r.pool.length ? r.pool.map(it => card(r, it, 'pool')) : h('p', {class:'note'}, 'All steps are placed. Tap ✅ Check.')));
+      }
+      let sayNow = '';
+      if (r.fb) {
+        const fbEl = h('div', {class:'fb ' + r.fb.kind, role:'status'}, h('div', {class:'fbtxt'}, r.fb.body));
+        const txt = fbEl.textContent;
+        if (canSpeak) fbEl.appendChild(h('button', {type:'button', class:'say fbsay', title:'Read aloud', 'aria-label':'Read this aloud', onclick:() => speak(txt)}, '🔊'));
+        panel.appendChild(fbEl);
+        if (auto && r.say) sayNow = txt;
+      } else if (auto && !r.intro) sayNow = r.page ? r.page + '. ' + instr : instr;
+      r.say = false; r.intro = true;
+      const ctl = h('div', {class:'ctl'});
+      if (canSpeak) {
+        const opts = r.solved || r.shown ? 'Tap the orange button to go on.'
+          : 'Buttons. Check: see if your order is right.' + (cfg.hints ? ' Hint: get help with the next step.' : '') + ' Start over: put all the cards back.' + (cfg.showAnswer ? ' Show answer: see the right order.' : '');
+        ctl.appendChild(h('button', {type:'button', class:'say ctlsay', title:'What do these buttons do?', 'aria-label':'Read what these buttons do', onclick:() => speak(opts)}, '🔊'));
+      }
+      if (r.solved || r.shown) {
+        const last = ri === rounds.length - 1;
+        ctl.appendChild(h('button', {type:'button', class:'bigbtn', onclick:() => { if (last) finish(); else { ri++; play(); window.scrollTo(0, 0); } }}, last ? (F ? "🏁 I'm done!" : 'Finish') : (rounds[ri + 1].pi !== r.pi ? (F ? 'Next page ➡️' : 'Next page') : (F ? 'Practice again ➡️' : 'Practice again'))));
+      } else {
+        ctl.appendChild(h('button', {type:'button', class:'bigbtn', onclick:() => { check(r); play(); }}, '✅ Check'));
+        if (cfg.hints) ctl.appendChild(h('button', {type:'button', class:'tbtn', onclick:() => { hint(r); play(); }}, '💡 Hint'));
+        ctl.appendChild(h('button', {type:'button', class:'tbtn', onclick:() => { resetRound(r); play(); }}, '🔄 Start over'));
+        if (cfg.showAnswer) ctl.appendChild(h('button', {type:'button', class:'tbtn', onclick:() => { reveal(r); play(); }}, '👀 Show answer'));
+      }
+      panel.appendChild(ctl);
+      root.appendChild(panel);
+      if (sayNow) speak(sayNow);
+    }
+
+    function finish(){
+      const seconds = Math.round((Date.now() - started) / 1000);
+      let got = 0, total = 0;
+      const rr = rounds.map(r => { const t = r.slots.length - r.given; got += r.got; total += t;
+        return {page:r.page || '', label:r.label, correct:r.correct.map(i => i.w), given:r.given, first:r.first || [], got:r.got, total:t, checks:r.checks, hints:r.hints, shown:r.shown, solved:r.solved}; });
+      const result = {v:1, kind:'steps-order', id:uid(), activity:cfg.title || 'Steps in Order', activityId:cfg.activityId || '', student:name, date:new Date().toISOString(), seconds, rounds:rr, got, total};
+      const code = encode(result);
+      const text = () => {
+        const L = [(cfg.title || 'Steps in Order') + ' - results', 'Student: ' + (name || '(no name entered)'), 'Date: ' + new Date().toLocaleString(), 'Time spent: ' + fmtTime(seconds), 'Score (first try): ' + got + ' of ' + total + ' steps', ''];
+        rr.forEach((r, i) => L.push((r.page ? r.page + ' (' + r.label + ')' : 'Practice ' + (i + 1)) + ': ' + r.got + ' of ' + r.total + ' on the first try. ' + (r.shown ? 'Answer shown.' : 'Solved after ' + r.checks + (r.checks === 1 ? ' check' : ' checks') + '.') + (r.hints ? ' Hints: ' + r.hints + '.' : '') + (r.given ? ' Steps done for them: ' + r.given + '.' : '')));
+        L.push('', 'Results code for the Steps in Order Maker app (keep this line):', code);
+        return L.join('\n');
+      };
+      const pct = total ? got / total : 1;
+      const stars = pct >= 0.9 ? '⭐⭐⭐' : pct >= 0.6 ? '⭐⭐' : '⭐';
+      root.textContent = '';
+      root.appendChild(top());
+      const status = h('p', {class:'sent', hidden:true}, '✅ Your results were sent to the app.');
+      if (embedded) {
+        const onAck = e => { if (e.data && e.data.type === 'steps-order-ack' && e.data.id === result.id) { status.hidden = false; window.removeEventListener('message', onAck); } };
+        window.addEventListener('message', onAck);
+        try { window.parent.postMessage({type:'steps-order-result', code}, '*'); } catch(e) {}
+      }
+      const subject = (cfg.subject || 'Steps in order results') + (name ? ' - ' + name : '');
+      const em = h('input', {type:'email', class:'emailin', placeholder:'name@example.com', value:cfg.email || '', 'aria-label':'Email address for results'});
+      const btns = h('div', {class:'rbtns'},
+        h('button', {type:'button', class:'bigbtn', onclick:() => {
+          const q = 'to=' + encodeURIComponent(em.value.trim()) + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text());
+          const w = window.open('https://mail.google.com/mail/?view=cm&fs=1&' + q, '_blank');
+          if (!w) window.location.href = 'https://mail.google.com/mail/?view=cm&fs=1&' + q;
+        }}, '📧 Open in Gmail'),
+        h('button', {type:'button', class:'tbtn', onclick:() => {
+          const a = h('a', {href:'mailto:' + em.value.trim() + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(text())});
+          document.body.appendChild(a); a.click(); a.remove();
+        }}, '✉️ Email app'),
+        h('button', {type:'button', class:'tbtn', onclick:function(){
+          const btn = this, t = text();
+          const ok = () => { btn.textContent = '✅ Copied'; setTimeout(() => { btn.textContent = '📋 Copy results'; }, 2000); };
+          const fallback = () => { const ta = h('textarea', {style:'position:fixed;left:-999px'}); ta.value = t; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); ok(); } catch(e) {} ta.remove(); };
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(ok, fallback); else fallback();
+        }}, '📋 Copy results'),
+        h('button', {type:'button', class:'tbtn', onclick:() => dl('steps-results' + (name ? '-' + name.replace(/[^\w-]+/g, '_') : '') + '.txt', new Blob([text()], {type:'text/plain'}))}, '💾 Save results file'),
+        h('button', {type:'button', class:'tbtn', onclick:() => { mount(root, cfg); window.scrollTo(0, 0); }}, '🔄 Start over'));
+      const headline = cfg.showScore
+        ? (F ? 'You got ' + got + ' of ' + total + ' steps on the first try!' : 'Score: ' + got + ' of ' + total + ' steps correct on the first try.')
+        : (F ? 'Great work!' : 'Finished. Thank you.');
+      root.appendChild(h('section', {class:'panel result'},
+        F ? h('div', {class:'stars'}, stars) : null,
+        h('h2', null, headline, sayBtn(headline)),
+        cfg.showScore && rr.length > 1 ? h('div', {class:'chips'}, rr.map((r, i) => h('span', {class:'chip ' + (r.got === r.total ? 'ok' : 'try')}, (F ? (r.got === r.total ? '✅ ' : '🔁 ') : '') + (r.page || 'Practice ' + (i + 1)) + ': ' + r.got + '/' + r.total)),
+          sayBtn(rr.map((r, i) => (r.page || 'Practice ' + (i + 1)) + ': ' + r.got + ' of ' + r.total).join('. '))) : null,
+        status,
+        h('div', {class:'emailrow'}, h('label', null, '📧 Send to: '), em, sayBtn('Send to. This is the email address your results go to.')),
+        btns,
+        h('p', {class:'note sayrow', style:'justify-content:center'}, 'Open in Gmail needs internet and a Gmail sign-in. No internet? Use Copy results or Save results file and give it to staff.',
+          sayBtn('Now send your results to staff. Tap Open in Gmail. No internet? Tap Copy results or Save results file, and give it to staff.'))));
+      if (auto) speak(headline);
+      window.scrollTo(0, 0);
+    }
+
+    startScreen();
+  }
+  window.SEQ = {mount:mount};
+})();
+SEQ.mount(document.getElementById("root"),CONFIG);
+</script></body></html>
